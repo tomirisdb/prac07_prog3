@@ -1,12 +1,13 @@
-module person_database;
-
-import <iostream>;
-import <fstream>;
-import <string>;
-import <iomanip>;
-import <sstream>;
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+#include <sstream>
+#include "Person.h"
+#include "Database.h"
 
 using namespace std;
+using namespace HR;
 
 void Database::add(Person person)
 {
@@ -67,9 +68,9 @@ void Database::load(string_view filename)
 	}
 }
 
-void Database::outputAll(ostream& output) const
+void Database::outputAll() const
 {
 	for (const auto& person : m_persons) {
-		person.output(output);
+		person.output();
 	}
 }

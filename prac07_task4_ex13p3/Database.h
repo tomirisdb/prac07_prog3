@@ -1,11 +1,11 @@
-export module person_database;
+#include "Person.h"
+#include <vector>
+#include <ostream>
+#include <string_view>
 
-import person;
-import <vector>;
-import <ostream>;
-import <string_view>;
+using namespace HR;
 
-export class Database
+class Database
 {
 public:
 	// Adds the given person to the database.
@@ -21,7 +21,7 @@ public:
 	void load(std::string_view filename);
 
 	// Outputs all persons to the given stream.
-	void outputAll(std::ostream& output) const;
+	void outputAll() const;
 
 private:
 	std::vector<Person> m_persons;
