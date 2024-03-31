@@ -1,18 +1,19 @@
-import person;
-import <iostream>;
-import <format>;
+#include "Person.h"
+#include <iostream>
+#include <format>
 
 using namespace std;
+using namespace HR;
 
 int main()
 {
-	Person person { "John", "Doe" };
-	cout << format("The initials of {} {} are {}.",
-		person.getFirstName(), person.getLastName(), person.getInitials()) << endl;
+	Person person = { "John", "Doe" };
+	cout << "The initials of " << person.getFirstName() << " " << person.getLastName() << " are " << person.getInitials() << ".";
+    
 
 	Person person2 { "Marc", "Gregoire", "Mg" };
-	cout << format("The initials of {} {} are {}.",
-		person2.getFirstName(), person2.getLastName(), person2.getInitials()) << endl;
+	cout << "The initials of " << person2.getFirstName() << " " << person2.getLastName() << " are " << person2.getInitials() << ".";
+    
 
 	Person persons[3];
 
